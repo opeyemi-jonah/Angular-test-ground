@@ -11,6 +11,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -18,6 +24,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     AppComponent,
     UserGridComponent,
     DeptGridComponent,
+    AddUserComponent,
+    EditUserComponent,
+    UserListComponent,
     
   ],
   imports: [
@@ -28,7 +37,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatExpansionModule,
     MatTableModule,
     MatPaginatorModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    FormsModule
     
   ],
   providers: [],
