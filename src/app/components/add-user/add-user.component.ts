@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CrudService } from "../../shared/crud.service";
 
 @Component({
   selector: 'app-add-user',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent implements OnInit {
+@Input() userObj = {name: '', email: '', phone: 0};
 
-  constructor() { }
+  constructor(
+    public crudService: CrudService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  addUser(data: any) {
+    this.crudService.addUser(this.userObj).subscribe((data: {})=>{
+      this.router.navigate(['/list']);
+    });
   }
 
 }
